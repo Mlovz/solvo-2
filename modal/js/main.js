@@ -1,58 +1,23 @@
-// const btn = document.querySelector('.open_btn')
+const openBtn = document.querySelector(".open_btn");
+const modal = document.querySelector(".modal");
+const modalBox = document.querySelector(".modal-box");
 
+const closeBtn = document.querySelector(".btn-close");
 
-// for(let i of arr){
-//   if(i < 0){
-//     console.log(i);
-//   }
-// }
+const handleClick = () => {
+  modal.classList.add("active");
+  modalBox.classList.add("active");
+};
 
-//  arr.forEach(el => {
-//   if(el === 2){
-//     console.log(2);
-//   }
-// })
+openBtn.addEventListener("click", handleClick);
 
-// for(let item of arr){
-//   if(item === 2){
-//     console.log(2);
-//   }else{
-//     console.log('Нет двойки');
-//   }
-// }
+const close = (e) => {
+  e.preventDefault();
 
+  modal.classList.remove("active");
+  modalBox.classList.remove("active");
 
+  closeBtn.style.background = "red";
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const openBtn = document.querySelector(".open_btn");
-// const modalOverlay = document.querySelector(".modal");
-// const modalBox = document.querySelector(".modal-box");
-
-// const closeBtn = document.querySelector(".btn-close");
-
-// function openModal() {
-//   modalOverlay.classList.add("active");
-//   modalBox.classList.add("active");
-// }
-
-// openBtn.addEventListener("click", openModal);
-
-// function closeModal(e) {
-//   e.preventDefault();
-//   modalOverlay.classList.remove("active");
-//   modalBox.classList.remove("active");
-// }
-
-// closeBtn.addEventListener("click", closeModal);
+closeBtn.addEventListener("click", close);
